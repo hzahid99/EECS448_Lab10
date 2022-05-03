@@ -14,7 +14,7 @@
 
 	echo "<p style='font-size:25px; text-align:center'> Users Table</p>";
 
-	echo "<table style='border: 2.5px solid black; color: Red; font-size: 24px'>";
+	echo "<table style='border: 2.5px solid black; font-size: 24px'>";
 	echo "<tr>";
 	echo "<td>" ."Users". "</td>";
 	echo "</tr>";

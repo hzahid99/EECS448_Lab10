@@ -1,0 +1,44 @@
+<html>
+<body>
+	<form action="DeletePost.php" method="post">
+
+	<?php
+	$mysqli = new mysqli("mysql.eecs.ku.edu", "h159z867", "Panah9ma", "h159z867");
+
+	if ($mysqli->connect_errno) 	/* check connection */
+	{
+		printf("Connect failed: %s\n", $mysqli->connect_error);
+		exit();
+	}	
+
+	echo "<p style='text-align: center; font-size: 25px'> Want to delete any posts?</p>";
+
+        $query = "SELECT post_id, content, author_id from Posts";
+        $selection = $mysqli -> query($query);
+
+                echo "<table style='border: 3px solid black; width: 100%'>";
+                echo "<tr>";
+                echo "<td style='border:2px solid black; font-size:20px'>" . "Post" . "</td>";
+                echo "<td style='border:2px solid black; font-size:20px'>" . "Author ID" . "</td>";
+                echo "<td style='border:2px solid black; font-size:20px'>" . "Check the box to delete" . "</td>";
+                echo "</tr>";
+                if ($selection -> num_rows > 0)
+		{
+                    	while ($row = $selection -> fetch_assoc())
+			{
+                        	echo "<tr>";
+                        	echo "<td style='border:1.5px solid black; color:Blue'>" . $row["content"] . "</td>";
+                        	echo "<td style='border:1.5px solid black; color:Blue'>" . $row["author_id"] . "</td>";
+                        	echo "<td style='border:1.5px solid black; color:Blue'><input type='checkbox' name='" . $row["post_id"] . "'></td>";
+                        	echo "</tr>";
+                    	}
+                }
+
+                echo "</table>";
+                $mysqli->close();
+	?>
+	<br><br>
+	<button type="submit">Delete</button> 
+	</form>
+</body>
+</html>
