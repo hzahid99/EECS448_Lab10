@@ -15,11 +15,11 @@
                 while ($row = $selection -> fetch_assoc())
 		{
 			$del = $_POST[$row["post_id"]];
-			if($del=="on")
+			if($del =="on")
 			{
 				$query="DELETE FROM Posts WHERE post_id='".$row["post_id"]."'";
 				$deleted = $mysqli -> query($query);
-				echo "<p style='text-align: center; font-size:25px'>Post Id: ".$row["post_id"]." from user: ".$row["author_id"]." has been deleted.</p>"; 	
+				echo "<p style='text-align: center; font-size:25px'>Post Id: ".$row["post_id"]." from (user) ".$row["author_id"]." has been deleted.</p>"; 	
 			}
 		}
 	}

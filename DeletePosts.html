@@ -1,6 +1,6 @@
 <html>
 <body>
-	<form action="DeletePost.php" method="post">
+	<form action="DeletePosts.php" method="post">
 
 	<?php
 	$mysqli = new mysqli("mysql.eecs.ku.edu", "h159z867", "Panah9ma", "h159z867");
@@ -18,9 +18,9 @@
 
                 echo "<table style='border: 3px solid black; width: 100%'>";
                 echo "<tr>";
-                echo "<td style='border:2px solid black; font-size:20px'>" . "Post" . "</td>";
-                echo "<td style='border:2px solid black; font-size:20px'>" . "Author ID" . "</td>";
-                echo "<td style='border:2px solid black; font-size:20px'>" . "Check the box to delete" . "</td>";
+                echo "<td style='border:2px solid black; font-size:20px'>" ."Post". "</td>";
+                echo "<td style='border:2px solid black; font-size:20px'>" ."Author ID". "</td>";
+                echo "<td style='border:2px solid black; font-size:20px'>" ."Check the box to delete". "</td>";
                 echo "</tr>";
                 if ($selection -> num_rows > 0)
 		{
